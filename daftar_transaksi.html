@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Transaksi - Sultan.Sneakers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+        font-family: Arial, sans-serif;
+      }
+
+      h2 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto; /* Konten utama di tengah */
+      }
+
+      .table-container {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      footer {
+        background: linear-gradient(to bottom, #343a40, #212529);
+      }
+
+      footer h5 {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: white;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header
+      class="bg-dark text-white p-5"
+      style="
+        background-image: url(header.jpg);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container d-flex justify-content-between align-items-center">
+        <img src="logo.png" alt="Logo Aplikasi" class="logo" width="100" />
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+      <h2>Daftar Transaksi</h2>
+      <div class="table-container">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nama Transaksi</th>
+              <th>Jumlah</th>
+              <th>Kategori</th>
+              <th>Tanggal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Sepatu Running</td>
+              <td>2</td>
+              <td>Sepatu Pria</td>
+              <td>2025-01-01</td>
+              <td>
+                <button class="btn btn-sm btn-warning">Edit</button>
+                <button class="btn btn-sm btn-danger">Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Boots Wanita</td>
+              <td>1</td>
+              <td>Sepatu Wanita</td>
+              <td>2025-01-01</td>
+              <td>
+                <button class="btn btn-sm btn-warning">Edit</button>
+                <button class="btn btn-sm btn-danger">Hapus</button>
+              </td>
+            </tr>
+            <!-- Tambahkan transaksi lainnya di sini -->
+          </tbody>
+        </table>
+      </div>
+      <div class="text-end mt-3">
+        <a href="transaksi.html" class="btn btn-primary">Tambah Transaksi</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Sultan.Sneakers</h5>
+            <p>
+              Sultan.Sneakers adalah tempat terbaik untuk mendapatkan sepatu
+              impianmu dengan kualitas terbaik dan harga terjangkau.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Navigasi Cepat</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="transaksi.html">Transaksi</a></li>
+              <li><a href="profil.html">Profil</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Hubungi Kami</h5>
+            <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+            <p><i class="fas fa-envelope"></i> support@sultansneakers.com</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Ciputat, Tangerang Selatan
+            </p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="text-white me-3">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="#" class="text-white me-3">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="#" class="text-white">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+        </div>
+        <div class="text-center mt-3">
+          <p class="mb-0">
+            &copy; 2024 Sultan.Sneakers. All rights reserved. Designed by Sultan
+            Abdul Fatah.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
