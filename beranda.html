@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cara Memesan Sepatu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .floating-box {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        transition: transform 0.3s, box-shadow 0.3s;
+        font-weight: 500;
+      }
+
+      .floating-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      body {
+        background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+        font-family: Arial, sans-serif;
+      }
+
+      h2 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .icon {
+        font-size: 40px;
+        color: #007bff;
+      }
+
+      .floating-box h5 {
+        display: flex;
+        align-items: center;
+      }
+
+      .floating-box h5 .icon {
+        margin-right: 15px;
+      }
+
+      .image-box {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 200px;
+        background-color: #343a40;
+        color: white;
+        overflow-y: auto;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
+      }
+
+      .sidebar.collapsed {
+        transform: translateX(-200px);
+      }
+
+      .sidebar .nav-link {
+        color: white;
+        padding: 10px 15px;
+      }
+
+      .toggle-button {
+        position: fixed;
+        top: 10px;
+        left: 210px;
+        z-index: 1100;
+        background-color: #343a40;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .toggle-button.collapsed {
+        left: 10px;
+      }
+
+      footer {
+        background: linear-gradient(to bottom, #343a40, #212529);
+      }
+
+      footer h5 {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: white;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #007bff;
+      }
+
+      @media (max-width: 768px) {
+        .toggle-button {
+          left: 10px;
+        }
+
+        .sidebar {
+          transform: translateX(-200px);
+        }
+
+        .sidebar.show {
+          transform: translateX(0);
+        }
+
+        .toggle-button.collapsed {
+          left: 10px;
+        }
+
+        header {
+          text-align: center;
+        }
+
+        .container {
+          margin: 0 10px;
+        }
+
+        main {
+          margin-left: 0;
+        }
+
+        .image-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        footer .row {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .floating-box {
+          padding: 15px;
+        }
+
+        .floating-box h5 {
+          font-size: 18px;
+        }
+
+        .floating-box p {
+          font-size: 14px;
+        }
+
+        .icon {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="bg-dark text-white p-5"
+      style="
+        background-image: url(header.jpg);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container d-flex justify-content-between align-items-center">
+        <img src="logo.png" alt="Logo Aplikasi" class="logo" width="100" />
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="beranda.html">
+            <i class="fas fa-home"></i> Beranda
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="transaksi.html">
+            <i class="fas fa-shopping-cart"></i> Transaksi
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="profil.html">
+            <i class="fas fa-user"></i> Profil
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="login.html">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-button" id="toggleButton">☰</button>
+
+    <!-- isi -->
+    <main class="container py-5" style="margin-left: 5px">
+      <section id="cara-memesan">
+        <h2>
+          Siap Miliki Sepatu Impianmu? Yuk, Ikuti Cara Mudahnya di
+          Sultan.Sneakers!
+        </h2>
+        <h3>
+          Ikuti langkah-langkah praktis ini dan dapatkan sepatu terbaik hanya di
+          Sultan.Sneakers!
+        </h3>
+
+        <div class="image-container">
+          <img src="side bar.png" alt="Ilustrasi Sepatu" class="image-box" />
+          <div>
+            <div class="floating-box">
+              <h5>
+                <i class="fas fa-search icon"></i> 1. Melihat Profil Sepatu
+              </h5>
+              <p>
+                Kunjungi halaman <a href="profil.html">Profil</a> untuk melihat
+                berbagai pilihan sepatu yang tersedia. Anda dapat memilih
+                berdasarkan merek, harga, atau desain yang Anda sukai.
+              </p>
+            </div>
+            <div class="floating-box">
+              <h5><i class="fas fa-sign-in-alt icon"></i> 2. Login</h5>
+              <p>
+                Lakukan <a href="login.html">Login</a> ke akun Anda untuk
+                melanjutkan ke proses transaksi. Jika belum memiliki akun,
+                silakan daftar terlebih dahulu.
+              </p>
+            </div>
+            <div class="floating-box">
+              <h5>
+                <i class="fas fa-edit icon"></i> 3. Mengisi Form Transaksi
+              </h5>
+              <p>
+                Setelah login, masuk ke halaman
+                <a href="transaksi.html">Transaksi</a> dan isi form pemesanan
+                sesuai dengan data yang diminta, seperti ukuran sepatu, alamat
+                pengiriman, dan metode pembayaran.
+              </p>
+            </div>
+            <div class="floating-box">
+              <h5><i class="fas fa-check icon"></i> 4. Selesaikan Pemesanan</h5>
+              <p>
+                Pastikan semua data yang diisi sudah benar, lalu konfirmasi
+                pemesanan. Anda akan menerima informasi lebih lanjut melalui
+                email atau notifikasi di aplikasi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Sultan.Sneakers</h5>
+            <p>
+              Sultan.Sneakers adalah tempat terbaik untuk mendapatkan sepatu
+              impianmu dengan kualitas terbaik dan harga terjangkau.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Navigasi Cepat</h5>
+            <ul class="list-unstyled">
+              <li><a href="beranda.html">Beranda</a></li>
+              <li><a href="transaksi.html">Transaksi</a></li>
+              <li><a href="profil.html">Profil</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Hubungi Kami</h5>
+            <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+            <p><i class="fas fa-envelope"></i> support@sultansneakers.com</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Ciputat, Tangerang Selatan
+            </p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="text-white me-3">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="#" class="text-white me-3">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="#" class="text-white">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+        </div>
+        <div class="text-center mt-3">
+          <p class="mb-0">
+            &copy; 2024 Sultan.Sneakers. All rights reserved. Designed by Sultan
+            Abdul Fatah.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const sidebar = document.getElementById("sidebar");
+
+      toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        toggleButton.classList.toggle("collapsed");
+      });
+    </script>
+  </body>
+</html>
