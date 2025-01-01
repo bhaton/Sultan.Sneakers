@@ -106,6 +106,7 @@
         border-radius: 5px;
         padding: 5px 10px;
         cursor: pointer;
+        transition: left 0.3s;
       }
 
       .toggle-button.collapsed {
@@ -253,16 +254,14 @@
               </h5>
               <p>
                 Kunjungi halaman <a href="profil.html">Profil</a> untuk melihat
-                berbagai pilihan sepatu yang tersedia. Anda dapat memilih
-                berdasarkan merek, harga, atau desain yang Anda sukai.
+                berbagai pilihan sepatu yang tersedia.
               </p>
             </div>
             <div class="floating-box">
               <h5><i class="fas fa-sign-in-alt icon"></i> 2. Login</h5>
               <p>
                 Lakukan <a href="login.html">Login</a> ke akun Anda untuk
-                melanjutkan ke proses transaksi. Jika belum memiliki akun,
-                silakan daftar terlebih dahulu.
+                melanjutkan ke proses transaksi.
               </p>
             </div>
             <div class="floating-box">
@@ -272,16 +271,14 @@
               <p>
                 Setelah login, masuk ke halaman
                 <a href="transaksi.html">Transaksi</a> dan isi form pemesanan
-                sesuai dengan data yang diminta, seperti ukuran sepatu, alamat
-                pengiriman, dan metode pembayaran.
+                sesuai dengan data yang diminta.
               </p>
             </div>
             <div class="floating-box">
               <h5><i class="fas fa-check icon"></i> 4. Selesaikan Pemesanan</h5>
               <p>
                 Pastikan semua data yang diisi sudah benar, lalu konfirmasi
-                pemesanan. Anda akan menerima informasi lebih lanjut melalui
-                email atau notifikasi di aplikasi.
+                pemesanan.
               </p>
             </div>
           </div>
@@ -319,15 +316,15 @@
           </div>
         </div>
         <div class="text-center mt-4">
-          <a href="#" class="text-white me-3">
-            <i class="fab fa-facebook fa-lg"></i>
-          </a>
-          <a href="#" class="text-white me-3">
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
-          <a href="#" class="text-white">
-            <i class="fab fa-twitter fa-lg"></i>
-          </a>
+          <a href="#" class="text-white me-3"
+            ><i class="fab fa-facebook fa-lg"></i
+          ></a>
+          <a href="#" class="text-white me-3"
+            ><i class="fab fa-instagram fa-lg"></i
+          ></a>
+          <a href="#" class="text-white"
+            ><i class="fab fa-twitter fa-lg"></i
+          ></a>
         </div>
         <div class="text-center mt-3">
           <p class="mb-0">
@@ -344,6 +341,7 @@
 
       toggleButton.addEventListener("click", () => {
         sidebar.classList.toggle("collapsed");
+        sidebar.classList.toggle("show");
         toggleButton.classList.toggle("collapsed");
       });
     </script>
