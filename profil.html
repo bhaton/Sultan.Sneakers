@@ -54,88 +54,68 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: 250px; /* Lebar sidebar diperbesar */
+        width: 200px;
         background-color: #343a40;
         color: white;
         overflow-y: auto;
         z-index: 1000;
         transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
       }
 
       .sidebar.collapsed {
-        transform: translateX(-250px);
+        transform: translateX(-200px);
       }
 
       .sidebar .nav-link {
         color: white;
-        padding: 15px 20px;
+        padding: 10px 15px;
       }
 
-      /* Toggle button untuk sidebar */
       .toggle-button {
         position: fixed;
-        top: 20px;
-        left: 270px;
+        top: 10px;
+        left: 210px;
         z-index: 1100;
         background-color: #343a40;
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 10px 15px;
+        padding: 5px 10px;
         cursor: pointer;
+        transition: left 0.3s;
       }
 
       .toggle-button.collapsed {
         left: 10px;
       }
+      header {
+        padding: 40px 15px; /* Menyesuaikan padding header */
+      }
 
-      /* Responsif untuk layar kecil */
-      @media (max-width: 768px) {
-        .toggle-button {
-          left: 10px;
-        }
+      .container {
+        padding: 10px;
+      }
 
-        .sidebar {
-          width: 200px; /* Lebar sidebar di layar kecil */
-          transform: translateX(-200px);
-        }
+      .carousel-inner {
+        padding: 0 10px; /* Menambahkan padding pada carousel */
+      }
 
-        .sidebar.show {
-          transform: translateX(0);
-        }
+      .card {
+        margin-bottom: 10px;
+      }
 
-        .toggle-button.collapsed {
-          left: 10px;
-        }
+      .carousel-item {
+        padding: 10px;
+      }
 
-        header {
-          padding: 40px 15px; /* Menyesuaikan padding header */
-        }
+      .card-img-top {
+        width: 100%; /* Gambar dalam card agar responsif */
+        height: auto;
+      }
 
-        .container {
-          padding: 10px;
-        }
-
-        .carousel-inner {
-          padding: 0 10px; /* Menambahkan padding pada carousel */
-        }
-
-        .card {
-          margin-bottom: 10px;
-        }
-
-        .carousel-item {
-          padding: 10px;
-        }
-
-        .card-img-top {
-          width: 100%; /* Gambar dalam card agar responsif */
-          height: auto;
-        }
-
-        .card-body {
-          padding: 15px; /* Mengurangi padding pada card */
-        }
+      .card-body {
+        padding: 15px; /* Mengurangi padding pada card */
       }
 
       /* Pastikan gambar carousel responsif */
@@ -430,8 +410,10 @@
     <script>
       const toggleButton = document.getElementById("toggleButton");
       const sidebar = document.getElementById("sidebar");
-      toggleButton.addEventListener("click", function () {
+
+      toggleButton.addEventListener("click", () => {
         sidebar.classList.toggle("collapsed");
+        sidebar.classList.toggle("show");
         toggleButton.classList.toggle("collapsed");
       });
     </script>

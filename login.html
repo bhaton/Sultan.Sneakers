@@ -111,29 +111,13 @@
         border-radius: 5px;
         padding: 5px 10px;
         cursor: pointer;
+        transition: left 0.3s;
       }
 
       .toggle-button.collapsed {
         left: 10px;
       }
 
-      @media (max-width: 768px) {
-        .toggle-button {
-          left: 10px;
-        }
-
-        .sidebar {
-          transform: translateX(-200px);
-        }
-
-        .sidebar.show {
-          transform: translateX(0);
-        }
-
-        .toggle-button.collapsed {
-          left: 10px;
-        }
-      }
       footer {
         background: linear-gradient(to bottom, #343a40, #212529);
       }
@@ -295,6 +279,7 @@
 
       toggleButton.addEventListener("click", () => {
         sidebar.classList.toggle("collapsed");
+        sidebar.classList.toggle("show");
         toggleButton.classList.toggle("collapsed");
       });
     </script>
